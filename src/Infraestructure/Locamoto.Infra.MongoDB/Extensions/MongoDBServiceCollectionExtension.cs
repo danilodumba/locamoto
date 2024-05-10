@@ -1,6 +1,8 @@
 using Locamoto.Domain.Repositories;
 using Locamoto.Infra.MongoDB.Contexts;
+using Locamoto.Infra.MongoDB.Queries;
 using Locamoto.Infra.MongoDB.Repositories;
+using Locamoto.UseCases.Orders.Queries;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,5 +15,7 @@ public static class MongoDBServiceCollectionExtension
         ArgumentNullException.ThrowIfNullOrEmpty(connectionString);
 
         services.AddScoped<IOrdeDeliverymanNotificationRepository>(p => new OrderDeliverymanNotificationRepository(connectionString));
+        
+        services.AddTransient<IOrderDeliverymanNotificationQuery>(p => new OrderDeliverymanNotificationQuery(connectionString));
     }
 }
