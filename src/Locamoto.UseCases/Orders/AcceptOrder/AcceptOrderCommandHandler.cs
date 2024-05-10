@@ -4,9 +4,9 @@ using MediatR;
 
 namespace Locamoto.UseCases.Orders.AcceptOrder;
 
-public class AcceptOrderCommandHandler(IOrderNotificationRepository orderNotificationRepository, IDeliverymanRepository deliverymanRepository, IOrderRepository orderRepository) : IRequestHandler<AcceptOrderCommand, AcceptOrderResponse>
+public class AcceptOrderCommandHandler(IOrdeDeliverymanNotificationRepository orderNotificationRepository, IDeliverymanRepository deliverymanRepository, IOrderRepository orderRepository) : IRequestHandler<AcceptOrderCommand, AcceptOrderResponse>
 {
-    readonly IOrderNotificationRepository _orderNotificationRepository = orderNotificationRepository;
+    readonly IOrdeDeliverymanNotificationRepository _orderNotificationRepository = orderNotificationRepository;
     readonly IDeliverymanRepository _deliverymanRepository = deliverymanRepository;
     readonly IOrderRepository _orderRepository = orderRepository;
 

@@ -1,21 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Locamoto.Domain.Entities
 {
-    public class OrderNotification
+    public class OrderDeliverymanNotification(DateTime createdAt, OrderNotification order, DeliverymanNotification deliveryman)
     {
-        public OrderNotification(Guid orderID, Guid deliverymanID, DateTime createdAt)
-        {
-            OrderID = orderID;
-            DeliverymanID = deliverymanID;
-            CreatedAt = createdAt;
-        }
+        public DateTime CreatedAt { get; set; } = createdAt;
+        public OrderNotification Order { get; set; } = order;
+        public DeliverymanNotification Deliveryman { get; set; } = deliveryman;
+    }
 
-        public Guid OrderID { get; set; }
-        public Guid DeliverymanID { get; set; }
-        public DateTime CreatedAt { get; set; }
+    public class DeliverymanNotification(Guid deliverymanID, string name)
+    {
+        public Guid DeliverymanID { get; set; } = deliverymanID;
+        public string Name { get; set; } = name;
+    }
+
+    public class OrderNotification(Guid orderID, decimal cost, DateTime data)
+    {
+        public Guid OrderID { get; set; } = orderID;
+        public decimal Cost { get; set; } = cost;
+        public DateTime Data { get; set; } = data;
     }
 }

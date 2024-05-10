@@ -27,7 +27,9 @@ public static class DbPostgreSqlServiceCollectionExtension
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IMotorcycleRepository, MotorcycleRepository>();
         services.AddScoped<ICostPlanRepository, CostPlanRepository>();
-        services.AddScoped<IOrderNotificationRepository, OrderNotificationRepository>();
+
+        //TODO: remover isso daqui.
+        services.AddScoped<IOrdeDeliverymanNotificationRepository, OrderNotificationRepository>();
 
         services.AddTransient<ICostPlanServiceQuery>(x => new CostPlanQuery(connectionString));
         services.AddTransient<IMotorcycleQuery>(x => new MotorcycleQuery(connectionString));

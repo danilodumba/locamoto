@@ -14,6 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Locamoto.UseCases\Locamoto.UseCases.csproj" />
     <ProjectReference Include="..\Infraestructure\Locamoto.Infra.PostgreSql\Locamoto.Infra.PostgreSql.csproj" />
+    <ProjectReference Include="..\Infraestructure\Locamoto.Infra.MongoDB\Locamoto.Infra.MongoDB.csproj" />
+    <ProjectReference Include="..\Infraestructure\Locamoto.Infra.RabbitMQ\Locamoto.Infra.RabbitMQ.csproj" />
   </ItemGroup>
 
 </Project>

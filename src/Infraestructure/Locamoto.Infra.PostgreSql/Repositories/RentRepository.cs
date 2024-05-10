@@ -38,9 +38,14 @@ namespace Locamoto.Infra.PostgreSql.Repositories
         
     }
 
-    internal class OrderNotificationRepository : IOrderNotificationRepository
+    internal class OrderNotificationRepository : IOrdeDeliverymanNotificationRepository
     {
         public Task Create(OrderNotification notification)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Create(OrderDeliverymanNotification notification)
         {
             throw new NotImplementedException();
         }
@@ -56,6 +61,11 @@ namespace Locamoto.Infra.PostgreSql.Repositories
         }
 
         public Task SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<OrderDeliverymanNotification?> IOrdeDeliverymanNotificationRepository.GetById(Guid id)
         {
             throw new NotImplementedException();
         }
