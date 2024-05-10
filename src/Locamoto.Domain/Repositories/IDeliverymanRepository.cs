@@ -10,4 +10,5 @@ public interface IDeliverymanRepository
     Task SaveChanges();
     Task<bool> ExistsCnpj(string cnpj);
     Task<bool> ExistsCnh(string cnh);
+    Task<List<Deliveryman>> ListDeliverymenWithRentAndWithoutOrder();
 }

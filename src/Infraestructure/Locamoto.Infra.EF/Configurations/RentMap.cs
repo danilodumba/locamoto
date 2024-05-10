@@ -23,7 +23,7 @@ public class RentMap : IEntityTypeConfiguration<Rent>
         builder.Property(p => p.Status);
 
 
-        builder.HasOne(p => p.Deliveryman).WithMany().HasForeignKey(LocamotoEFContextSchema.Rent.DeliverymanID);
+        builder.HasOne(p => p.Deliveryman).WithMany(p => p.Rents).HasForeignKey(LocamotoEFContextSchema.Rent.DeliverymanID);
         builder.HasOne(p => p.Plan).WithMany().HasForeignKey(LocamotoEFContextSchema.Rent.PlanID);
         builder.HasOne(p => p.Motorcycle).WithMany().HasForeignKey(LocamotoEFContextSchema.Rent.MotorcycleID);
     }

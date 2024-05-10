@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using Locamoto.Domain.Core;
 using Locamoto.Domain.Validations;
 using Locamoto.Domain.ValueObjects;
@@ -22,6 +23,9 @@ public class Deliveryman : EntityRoot
     public CNPJ Cnpj { get; private set; }
     public DateOnly BirthDate { get; private set; }
     public CnhCard Cnh { get; private set; }
+    public virtual IReadOnlyCollection<Rent> Rents { get; private set; } = new Collection<Rent>();
+    public virtual IReadOnlyCollection<Order> Orders { get; private set; } = new Collection<Order>();
+
 
     public override void Validate()
     {

@@ -1,9 +1,10 @@
 
 namespace Locamoto.Domain.Entities
 {
-    public class OrderDeliverymanNotification(DateTime createdAt, OrderNotification order, DeliverymanNotification deliveryman)
+    public class OrderDeliverymanNotification(OrderNotification order, DeliverymanNotification deliveryman)
     {
-        public DateTime CreatedAt { get; set; } = createdAt;
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public OrderNotification Order { get; set; } = order;
         public DeliverymanNotification Deliveryman { get; set; } = deliveryman;
     }

@@ -18,7 +18,7 @@ public class OrderMap : IEntityTypeConfiguration<Order>
         builder.Property(p => p.Cost).IsRequired();
 
         builder.HasOne(p => p.Deliveryman)
-            .WithMany()
+            .WithMany(p => p.Orders)
             .HasForeignKey(LocamotoEFContextSchema.Order.DeliverymanID);
     }
 }

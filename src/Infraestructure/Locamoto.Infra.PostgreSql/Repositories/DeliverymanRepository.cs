@@ -21,5 +21,13 @@ namespace Locamoto.Infra.PostgreSql.Repositories
         {
             return await _dbSet.AnyAsync(x => x.Cnpj.Value == cnpj);
         }
+
+        public async Task<List<Deliveryman>> ListDeliverymenWithRentAndWithoutOrder()
+        {
+            return await _dbSet.Where(x => 
+                                      x.Rents.Any(r => r.Status == StatusRent.Active) &&
+                                      !x.Orders.Any(x => x.Status == StatusOrder.Accept))
+                                .ToListAsync();
+        }
     }
 }

@@ -1,26 +1,27 @@
 using Locamoto.Domain.Entities;
 using Locamoto.Domain.Repositories;
+using Locamoto.Infra.MongoDB.Core;
+using MongoDB.Driver;
 
 namespace Locamoto.Infra.MongoDB.Repositories;
-public class OrderDeliverymanNotificationRepository : IOrdeDeliverymanNotificationRepository
+public class OrderDeliverymanNotificationRepository(string connectionString) :
+    RepositoryBase<OrderDeliverymanNotification>(connectionString),
+    IOrdeDeliverymanNotificationRepository
 {
-    public Task Create(OrderDeliverymanNotification notification)
+    public async Task Create(OrderDeliverymanNotification notification)
     {
-        throw new NotImplementedException();
+       await _dbSet.InsertOneAsync(notification);
     }
 
-    public Task<OrderDeliverymanNotification?> GetById(Guid id)
+    public async Task<OrderDeliverymanNotification?> GetById(Guid id)
     {
-        throw new NotImplementedException();
+        return await _dbSet.Find(x => x.Id == id).FirstOrDefaultAsync();
     }
 
-    public Task<bool> HasNotificationForDeliveryman(Guid orderID, Guid deliverymanID)
+    public async Task<bool> HasNotificationForDeliveryman(Guid orderID, Guid deliverymanID)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task SaveChanges()
-    {
-        throw new NotImplementedException();
+        return await _dbSet.Find(x => x.Order.OrderID == orderID 
+                             && x.Deliveryman.DeliverymanID == deliverymanID)
+                     .AnyAsync();
     }
 }
