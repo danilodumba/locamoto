@@ -9,6 +9,9 @@
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/AWSSDK.SecurityToken.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/Dapper.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/DnsClient.dll
+/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/MassTransit.dll
+/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/MassTransit.Abstractions.dll
+/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/MassTransit.RabbitMqTransport.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/MediatR.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/MediatR.Contracts.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
@@ -20,8 +23,10 @@
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/MongoDB.Driver.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/MongoDB.Driver.Core.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/MongoDB.Libmongocrypt.dll
+/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/Npgsql.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/RabbitMQ.Client.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/SharpCompress.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/Snappier.dll
 /Users/danilodumba/Projects/estudos/mottu/src/Locamoto.WebApi/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll

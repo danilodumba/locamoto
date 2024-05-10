@@ -6,5 +6,5 @@ using MediatR;
 
 namespace Locamoto.UseCases.Orders.Create
 {
-    public record CreateOrderNotificationEvent(Guid OrderID): INotification;
+    public record CreateOrderNotificationEvent(Guid OrderID, decimal Cost, DateTime CreatedAt): INotification;
 }

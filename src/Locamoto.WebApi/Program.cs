@@ -2,6 +2,7 @@ using Locamoto.Infra.PostgreSql.Extensions;
 using Locamoto.WebApi.Enpoints;
 using Locamoto.UseCases.Extensions;
 using Locamoto.Infra.MongoDB.Extensions;
+using Locamoto.Infra.RabbitMQ.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ builder.Services.AddEndpoints();
 builder.Services.AddUseCases();
 builder.Services.AddInfraPostgreSql(builder.Configuration);
 builder.Services.AddInfraMongoDB(builder.Configuration);
+builder.Services.AddRabbitMQ(builder.Configuration);
 
 var app = builder.Build();
 
