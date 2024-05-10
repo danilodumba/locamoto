@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/Locamoto.WebApi.props" />
+</Project>

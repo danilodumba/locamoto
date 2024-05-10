@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locamoto.Domain", "src\Locamoto.Domain\Locamoto.Domain.csproj", "{CA6D93EC-3A0E-44BE-9396-F4C138BF13DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1D935801-2A34-4748-BC49-C05631DE6BDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locamoto.UnitTest", "tests\Locamoto.UnitTest\Locamoto.UnitTest.csproj", "{83B58463-2161-41A7-A7A2-0B45172C9974}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D20A5916-366D-43AA-BE44-0040185E313F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locamoto.UseCases", "src\Locamoto.UseCases\Locamoto.UseCases.csproj", "{6B5F8567-CF4C-430A-9182-036969DBC9C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{667570F3-9759-4068-9857-4A4339FA5E00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locamoto.Infra.EF", "src\Infraestructure\Locamoto.Infra.EF\Locamoto.Infra.EF.csproj", "{58C366E2-5D4B-479B-AC65-EBC266639A0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locamoto.WebApi", "src\Locamoto.WebApi\Locamoto.WebApi.csproj", "{00E0AAF4-463C-4758-A23E-739C7ACA4963}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locamoto.Infra.PostgreSql", "src\Infraestructure\Locamoto.Infra.PostgreSql\Locamoto.Infra.PostgreSql.csproj", "{7AF40DF5-49FF-4532-AE93-D0C0D310895E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA6D93EC-3A0E-44BE-9396-F4C138BF13DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA6D93EC-3A0E-44BE-9396-F4C138BF13DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA6D93EC-3A0E-44BE-9396-F4C138BF13DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA6D93EC-3A0E-44BE-9396-F4C138BF13DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83B58463-2161-41A7-A7A2-0B45172C9974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83B58463-2161-41A7-A7A2-0B45172C9974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83B58463-2161-41A7-A7A2-0B45172C9974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83B58463-2161-41A7-A7A2-0B45172C9974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B5F8567-CF4C-430A-9182-036969DBC9C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B5F8567-CF4C-430A-9182-036969DBC9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B5F8567-CF4C-430A-9182-036969DBC9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B5F8567-CF4C-430A-9182-036969DBC9C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58C366E2-5D4B-479B-AC65-EBC266639A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58C366E2-5D4B-479B-AC65-EBC266639A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58C366E2-5D4B-479B-AC65-EBC266639A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58C366E2-5D4B-479B-AC65-EBC266639A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E0AAF4-463C-4758-A23E-739C7ACA4963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E0AAF4-463C-4758-A23E-739C7ACA4963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E0AAF4-463C-4758-A23E-739C7ACA4963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E0AAF4-463C-4758-A23E-739C7ACA4963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF40DF5-49FF-4532-AE93-D0C0D310895E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF40DF5-49FF-4532-AE93-D0C0D310895E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF40DF5-49FF-4532-AE93-D0C0D310895E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF40DF5-49FF-4532-AE93-D0C0D310895E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83B58463-2161-41A7-A7A2-0B45172C9974} = {1D935801-2A34-4748-BC49-C05631DE6BDF}
+		{6B5F8567-CF4C-430A-9182-036969DBC9C3} = {D20A5916-366D-43AA-BE44-0040185E313F}
+		{667570F3-9759-4068-9857-4A4339FA5E00} = {D20A5916-366D-43AA-BE44-0040185E313F}
+		{58C366E2-5D4B-479B-AC65-EBC266639A0E} = {667570F3-9759-4068-9857-4A4339FA5E00}
+		{00E0AAF4-463C-4758-A23E-739C7ACA4963} = {D20A5916-366D-43AA-BE44-0040185E313F}
+		{7AF40DF5-49FF-4532-AE93-D0C0D310895E} = {667570F3-9759-4068-9857-4A4339FA5E00}
+	EndGlobalSection
+EndGlobal

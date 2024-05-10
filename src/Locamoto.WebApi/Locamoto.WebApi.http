@@ -1,0 +1,6 @@
+@Locamoto.WebApi_HostAddress = http://localhost:5214
+
+GET {{Locamoto.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
