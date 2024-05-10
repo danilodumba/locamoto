@@ -9,15 +9,3 @@
 /Users/danilodumba/Projects/estudos/mottu/Locamoto.Domain/obj/Debug/net8.0/refint/Locamoto.Domain.dll
 /Users/danilodumba/Projects/estudos/mottu/Locamoto.Domain/obj/Debug/net8.0/Locamoto.Domain.pdb
 /Users/danilodumba/Projects/estudos/mottu/Locamoto.Domain/obj/Debug/net8.0/ref/Locamoto.Domain.dll
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/bin/Debug/net8.0/Locamoto.Domain.deps.json
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/bin/Debug/net8.0/Locamoto.Domain.dll
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/bin/Debug/net8.0/Locamoto.Domain.pdb
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/Locamoto.Domain.GeneratedMSBuildEditorConfig.editorconfig
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/Locamoto.Domain.AssemblyInfoInputs.cache
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/Locamoto.Domain.AssemblyInfo.cs
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/Locamoto.Domain.csproj.CoreCompileInputs.cache
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/Locamoto.Domain.sourcelink.json
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/Locamoto.Domain.dll
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/refint/Locamoto.Domain.dll
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/Locamoto.Domain.pdb
-/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.Domain/obj/Debug/net8.0/ref/Locamoto.Domain.dll
