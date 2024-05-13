@@ -1,4 +1,6 @@
 
+using System.Text.RegularExpressions;
+
 namespace Locamoto.Domain.ValueObjects
 {
     public struct CNPJ: ValueObject
@@ -6,7 +8,7 @@ namespace Locamoto.Domain.ValueObjects
         public CNPJ() {}
         public CNPJ(string cnpj)
         {
-            Value = cnpj;
+            Value = Regex.Replace(cnpj, @"[^\d]", ""); ;
         }
 
         public string Value { get; init; } = "";
@@ -22,5 +24,6 @@ namespace Locamoto.Domain.ValueObjects
         {
             return Value;
         }
+        
     }
 }

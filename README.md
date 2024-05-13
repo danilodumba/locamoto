@@ -29,10 +29,19 @@ Na teoria deveria existir os serviços separados para a API locamoto e API de no
 
 Abra o terminal e rode os comandos abaixo.
 
-1 - Na raiz do projeto execute o comando `docker-compose up` para subir a infraestrutura;
-2 - Na pasta `Locamoto.Infra.PostgreSql` excute o comando `dotnet ef database update para gerar o banco de dados;
-3 - Na raiz do projeto execute o comando `dotnet test` para testar se o projeto esta funcionando sem quebras. 
+- Na raiz do projeto execute o comando `docker-compose up` para subir a infraestrutura;
+- Na pasta `Locamoto.Infra.PostgreSql` excute o comando `dotnet ef database update para gerar o banco de dados;
+- Na raiz do projeto execute o comando `dotnet test` para testar se o projeto esta funcionando sem quebras. 
 
 Basta rodar o projeto e brincar com as APIs.
 
->**Note:** Lembre - se isso é so um meio de como fazer, não significa que estará certo pra o seu contexto.
+## Acessos a Infra.
+
+- RabbitMQ => http://localhost:15672
+- minIO => http://localhost:9001
+- MongoDB => Sugiro o Compass da propria MongoDB ou o seu favorito.
+- Postgres => Sugiro o DBEver ou o seu favorito.
+
+>**Note:** Lembre - se isso é so um meio de como fazer, não significa que estará certo para o seu contexto.
+
+>**Note:** Erros de Ingles ou Qualquer outra sugestão no codigo, baixa ai e faz um PR vai ser legal trocar uma ideia.
