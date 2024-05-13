@@ -27,6 +27,11 @@ public class Deliveryman : EntityRoot
     public virtual IReadOnlyCollection<Order> Orders { get; private set; } = new Collection<Order>();
 
 
+    public void SetCnh(CnhCard cnh)
+    {
+        this.Cnh = cnh;
+        this.Validate();
+    }
     public override void Validate()
     {
         this.Name.NotNull("The field Name is required.");

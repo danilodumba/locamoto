@@ -43,5 +43,6 @@ public class CreateDeliverymanEndpoint : IEndpoint
         .WithName("CreateDeliveryman")
         .WithTags("Deliveryman")
         .WithOpenApi();
+        
     }
 }

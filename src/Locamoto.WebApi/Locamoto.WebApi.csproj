@@ -16,6 +16,7 @@
     <ProjectReference Include="..\Infraestructure\Locamoto.Infra.PostgreSql\Locamoto.Infra.PostgreSql.csproj" />
     <ProjectReference Include="..\Infraestructure\Locamoto.Infra.MongoDB\Locamoto.Infra.MongoDB.csproj" />
     <ProjectReference Include="..\Infraestructure\Locamoto.Infra.RabbitMQ\Locamoto.Infra.RabbitMQ.csproj" />
+    <ProjectReference Include="..\Infraestructure\Locamoto.Infra.MinIO\Locamoto.Infra.MinIO.csproj" />
   </ItemGroup>
 
 </Project>

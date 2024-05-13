@@ -1,0 +1,23 @@
+version: '3.6'
+
+services:
+
+  minio:
+    image: minio/minio    
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+      
+    volumes:
+      - s3_data:/data
+      - s3_config:/root/.minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ACCESS_KEY: QezwmWmdCeSf6V583fV3
+      MINIO_SECRET_KEY: 2VNtKZJxiwe8fH31iMFbrsttOrqgaKdePs0eWeAh
+      MINIO_ROOT_USER: root
+      MINIO_ROOT_PASSWORD: ABC123456
+
+volumes:  
+  s3_data:
+  s3_config:
