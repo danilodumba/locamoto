@@ -22,6 +22,12 @@ Esse projeto tem por objetivo passar conhecimentos e técnicas de desenvolviment
 
 Na teoria deveria existir os serviços separados para a API locamoto e API de notificações de pedidos, mas como é um projeto para didática fiz utilizando somente uma API. Acredito que irá conseguir compreender os contextos. 
 
+<p>
+<img src="https://raw.githubusercontent.com/danilodumba/locamoto/main/docs/locamoto.png" />
+</p>
+
+>**Note:** Lembre - se isso é so um meio de como fazer, não significa que estará certo para o seu contexto.
+
 
 ## Como rodar o projeto?
 
@@ -30,7 +36,7 @@ Na teoria deveria existir os serviços separados para a API locamoto e API de no
 Abra o terminal e rode os comandos abaixo.
 
 - Na raiz do projeto execute o comando `docker-compose up` para subir a infraestrutura;
-- Na pasta `Locamoto.Infra.PostgreSql` excute o comando `dotnet ef database update para gerar o banco de dados;
+- Na pasta `Locamoto.Infra.PostgreSql` excute o comando `dotnet ef database update` para gerar o banco de dados;
 - Na raiz do projeto execute o comando `dotnet test` para testar se o projeto esta funcionando sem quebras. 
 
 Basta rodar o projeto e brincar com as APIs.
@@ -42,6 +48,6 @@ Basta rodar o projeto e brincar com as APIs.
 - MongoDB => Sugiro o Compass da propria MongoDB ou o seu favorito.
 - Postgres => Sugiro o DBEver ou o seu favorito.
 
->**Note:** Lembre - se isso é so um meio de como fazer, não significa que estará certo para o seu contexto.
+>**Note:** Senhas de acesso aos banco de dados, mensageria e minIO encontra - se no appsettings.json.
 
 >**Note:** Erros de Ingles ou Qualquer outra sugestão no codigo, baixa ai e faz um PR vai ser legal trocar uma ideia.
