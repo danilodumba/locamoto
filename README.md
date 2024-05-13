@@ -20,7 +20,7 @@ Esse projeto tem por objetivo passar conhecimentos e técnicas de desenvolviment
   
 ## Idéia da Solução
 
-Na teoria deveria existir os serviços separados para a API locamoto e API de notificações de pedidos, mas como é um projeto para didática fiz utilizando somente uma API. Acredito que irá conseguir compreender os contextos. 
+Na teoria, deveria existir os serviços separados para a API locamoto e API de notificações de pedidos, mas como é um projeto para didática fiz utilizando somente uma API. Acredito que irá conseguir compreender os contextos.
 
 <p>
 <img src="https://github.com/danilodumba/locamoto/blob/main/docs/Locamoto.png" />
