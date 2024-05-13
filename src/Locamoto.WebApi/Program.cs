@@ -4,6 +4,7 @@ using Locamoto.UseCases.Extensions;
 using Locamoto.Infra.MongoDB.Extensions;
 using Locamoto.Infra.RabbitMQ.Extensions;
 using Locamoto.Infra.MinIO.Extensions;
+using Locamoto.WebApi.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,9 +22,12 @@ builder.Services.AddInfraMinIO(builder.Configuration);
 builder.Services.AddAntiforgery();
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
-
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 
 var app = builder.Build();
+
+app.UseExceptionHandler();
 
 if (app.Environment.IsDevelopment())
 {
@@ -35,8 +39,8 @@ app.UseHttpsRedirection();
 
    app.UseRouting();
 
-    app.UseAuthentication(); // Must be after UseRouting()
-    app.UseAuthorization(); // Must be after UseAuthentication()
+app.UseAuthentication(); 
+app.UseAuthorization(); 
 app.UseAntiforgery();
 
 app.MapEndpoints(); 
