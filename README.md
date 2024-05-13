@@ -23,7 +23,7 @@ Esse projeto tem por objetivo passar conhecimentos e técnicas de desenvolviment
 Na teoria deveria existir os serviços separados para a API locamoto e API de notificações de pedidos, mas como é um projeto para didática fiz utilizando somente uma API. Acredito que irá conseguir compreender os contextos. 
 
 <p>
-<img src="https://github.com/danilodumba/locamoto/tree/main/docs/Locamoto.png" />
+<img src="https://github.com/danilodumba/locamoto/blob/main/docs/Locamoto.png" />
 </p>
 
 >**Note:** Lembre - se isso é so um meio de como fazer, não significa que estará certo para o seu contexto.
