@@ -2,12 +2,35 @@ version: '3.6'
 
 services:
 
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres:/data/postgres
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: locamoto
+      POSTGRES_DB: locamoto
+  
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+        - 5672:5672
+        - 15672:15672
+
+  mongoDB:
+    image: mongo
+    ports:
+        - 27017:27017
+
   minio:
     image: minio/minio    
     ports:
       - "9000:9000"
       - "9001:9001"
-      
     volumes:
       - s3_data:/data
       - s3_config:/root/.minio
@@ -21,3 +44,4 @@ services:
 volumes:  
   s3_data:
   s3_config:
+  postgres: 
