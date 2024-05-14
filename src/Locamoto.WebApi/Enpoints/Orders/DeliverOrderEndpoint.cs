@@ -26,6 +26,9 @@ public class DeliverOrderEndpoint : IEndpoint
             return Results.BadRequest(response.GetErrors());
         })
         .WithName("DeliverOrder")
+        .Produces(204)
+        .Produces(400, typeof(List<string>))
+        .Produces(500, typeof(ProblemDetails))
         .WithTags("Orders")
         .WithOpenApi();
     }

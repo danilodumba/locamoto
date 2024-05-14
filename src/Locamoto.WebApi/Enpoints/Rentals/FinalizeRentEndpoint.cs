@@ -28,6 +28,9 @@ public class FinalizeRentEndpoint : IEndpoint
         })
         .WithName("FinalizeRent")
         .WithTags("Rentals")
+        .Produces(200, typeof(FinalizeRentalCommandResponse))
+        .Produces(400, typeof(List<string>))
+        .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();
     }
 }

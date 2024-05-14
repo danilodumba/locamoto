@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ii/LjeqUIltku/Cj4VPNIYST8pVHQ/DTLVRyBQ43hq4Eh/UK9RxyPqZXWfaUNXlpv3+L2RioHRCjCMGpLBXyDA==",
+  "dgSpecHash": "T7wg5l3KutqyHwp4f0wUKXValxwltSd9L1X/Zf51U/M13R1S5c4lL6zOHTTlPcOkN31lC7TlBvUtqCWFRAijqw==",
   "success": true,
   "projectFilePath": "/Users/danilodumba/Projects/estudos/mottu/src/Infraestructure/Locamoto.Infra.PostgreSql/Locamoto.Infra.PostgreSql.csproj",
   "expectedPackageFiles": [

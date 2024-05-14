@@ -1,13 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "gTneqK4ygu8fiSfyMiV93gomDb55gB5lTkiWQ7GYghMtnSOWzCp/dizp0I+ArbmaRHErHZAJbliH5MhLR1ajrQ==",
+  "dgSpecHash": "Bm7aStun8EF88mV15G2KomzJesWWcLi5c47pCsAVtYExJ85HPnNikYVxbph0T+ZrAA+x0/tB5hr+gdaazRFrug==",
   "success": true,
   "projectFilePath": "/Users/danilodumba/Projects/estudos/mottu/src/Locamoto.UseCases/Locamoto.UseCases.csproj",
   "expectedPackageFiles": [
     "/Users/danilodumba/.nuget/packages/mediatr/12.2.0/mediatr.12.2.0.nupkg.sha512",
     "/Users/danilodumba/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/danilodumba/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "/Users/danilodumba/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "/Users/danilodumba/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/danilodumba/.nuget/packages/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "/Users/danilodumba/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/danilodumba/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
     "/Users/danilodumba/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512"
   ],
   "logs": []

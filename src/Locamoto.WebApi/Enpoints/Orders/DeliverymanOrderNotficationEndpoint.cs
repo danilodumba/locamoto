@@ -1,4 +1,6 @@
+using Locamoto.UseCases.Orders.Dtos;
 using Locamoto.UseCases.Orders.Queries;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Locamoto.WebApi.Enpoints.Orders;
 
@@ -16,6 +18,8 @@ public class DeliverymanOrderNotficationEndpoint : IEndpoint
         })
         .WithName("DeliverymanNotifications")
         .WithTags("Orders")
+        .Produces(200, typeof(List<OrderDeliverymanNotifiedDto>))
+        .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();
     }
 }

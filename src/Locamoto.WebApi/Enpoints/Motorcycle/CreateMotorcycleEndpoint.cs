@@ -25,6 +25,9 @@ namespace Locamoto.WebApi.Enpoints.Motorcycle
             })
             .WithName("CreteMotorcycle")
             .WithTags("Motorcycle")
+            .Produces(200, typeof(Guid))
+            .Produces(400, typeof(List<string>))
+            .Produces(500, typeof(ProblemDetails))
             .WithOpenApi();
         }
     }

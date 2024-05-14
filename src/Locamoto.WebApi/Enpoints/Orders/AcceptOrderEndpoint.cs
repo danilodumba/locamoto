@@ -27,6 +27,9 @@ public class AcceptOrderEndpoint : IEndpoint
         })
         .WithName("AcceptOrder")
         .WithTags("Orders")
+        .Produces(204)
+        .Produces(400, typeof(List<string>))
+        .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();
     }
 }

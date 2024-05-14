@@ -887,7 +887,8 @@
         "dependencies": {
           "Locamoto.Domain": "1.0.0",
           "MediatR": "12.2.0",
-          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Logging": "8.0.0"
         },
         "compile": {
           "bin/placeholder/Locamoto.UseCases.dll": {}

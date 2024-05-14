@@ -42,6 +42,9 @@ public class CreateDeliverymanEndpoint : IEndpoint
         })
         .WithName("CreateDeliveryman")
         .WithTags("Deliveryman")
+        .Produces(200, typeof(Guid))
+        .Produces(400, typeof(List<string>))
+        .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();
         
     }

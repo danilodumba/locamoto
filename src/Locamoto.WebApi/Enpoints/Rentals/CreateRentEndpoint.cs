@@ -27,6 +27,9 @@ public class CreateRentEndpoint : IEndpoint
         })
         .WithName("CreateRent")
         .WithTags("Rentals")
+        .Produces(200, typeof(CreateRentCommandResponse))
+        .Produces(400, typeof(List<string>))
+        .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();
     }
 }

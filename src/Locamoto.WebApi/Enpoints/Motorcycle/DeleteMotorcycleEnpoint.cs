@@ -26,6 +26,9 @@ namespace Locamoto.WebApi.Enpoints.Motorcycle
             })
             .WithName("RemoveMotorcycle")
             .WithTags("Motorcycle")
+            .Produces(204)
+            .Produces(400, typeof(List<string>))
+            .Produces(500, typeof(ProblemDetails))
             .WithOpenApi();
         }
     }

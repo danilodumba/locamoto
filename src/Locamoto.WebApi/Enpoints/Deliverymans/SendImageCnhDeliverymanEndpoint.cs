@@ -30,6 +30,9 @@ public class SendImageCnhDeliverymanEndpoint : IEndpoint
         .DisableAntiforgery()
         .WithName("SendImageCNHDeliveryman")
         .WithTags("Deliveryman")
+        .Produces(204)
+        .Produces(400, typeof(List<string>))
+        .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();
     }
 }

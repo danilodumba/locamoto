@@ -25,6 +25,9 @@ public class CreateOrderEndpoint : IEndpoint
         })
         .WithName("CreateOrder")
         .WithTags("Orders")
+        .Produces(200)
+        .Produces(400, typeof(List<string>))
+        .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();
     }
 }
