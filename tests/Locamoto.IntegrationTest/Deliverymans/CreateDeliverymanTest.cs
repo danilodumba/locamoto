@@ -14,7 +14,7 @@ namespace Locamoto.IntegrationTest.Deliverymans
         {
             var deliveryman = DeliverymanMock.GetDeliveryman();
 
-            var response = await this.Post("", deliveryman);
+            var response = await this.Post(string.Empty, deliveryman);
             
             Assert.True(response.IsSuccessStatusCode, $"Response invalid. StatusCode: {response.StatusCode} ");
         }

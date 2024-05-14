@@ -45,9 +45,12 @@ Basta rodar o projeto e brincar com as APIs.
 
 - RabbitMQ => http://localhost:15672
 - minIO => http://localhost:9001
+  >**Note:** Caso tenha problemas para acesso ao MinIO, crie uma nova chave de acesso no console do MinIO.
 - MongoDB => Sugiro o Compass da propria MongoDB ou o seu favorito.
 - Postgres => Sugiro o DBEver ou o seu favorito.
 
->**Note:** Senhas de acesso aos banco de dados, mensageria e minIO encontra - se no appsettings.json.
+
+
+>**Note:** Senhas de acesso aos banco de dados, mensageria e minIO encontra - se no appsettings.json ou no docker-compose.
 
 >**Note:** Erros de Ingles ou Qualquer outra sugestão no codigo, baixa ai e faz um PR vai ser legal trocar uma ideia.

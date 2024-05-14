@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Locamoto.IntegrationTest.Core;
 using Locamoto.IntegrationTest.Motorcycle.Mocks;
 
