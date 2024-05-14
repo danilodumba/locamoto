@@ -15,13 +15,8 @@ public class SendImageCnhDeliverymanEndpoint : IEndpoint
             [FromRoute] Guid deliverymanID,
             [FromForm] IFormFile formFile,
             IMediator mediator,
-            CancellationToken cancellationToken, 
-            IStorageCnhService service) =>
+            CancellationToken cancellationToken) =>
         {
-
-            await service.GetFile(new CnhFile(formFile.FileName, "", "locamoto"));
-
-
             Stream streamFile = formFile.OpenReadStream();
 
             UploadCnhImageCommand command = new (deliverymanID, formFile.FileName, streamFile);

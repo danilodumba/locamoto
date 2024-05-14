@@ -32,7 +32,7 @@ public class UploadCnhImageCommandHandler(IDeliverymanRepository deliverymanRepo
             await request.File.CopyToAsync(stream);   
         }
 
-        string cnhImage = request.FileName;
+        string cnhImage = $"CNH-{request.DeliverymanID}.{request.GetFileExtension()}" ;
 
         await _storageCnhService.Publish(new CnhFile(cnhImage, filePath, "locamoto"));
 
