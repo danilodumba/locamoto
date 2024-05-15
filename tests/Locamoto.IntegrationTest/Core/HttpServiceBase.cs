@@ -11,28 +11,10 @@ public abstract class HttpServiceBase: IDisposable
 {
         protected readonly HttpClient _client;
         private readonly string _api;
-        const string ENVIRONMENT = "Development";
         protected HttpServiceBase(string api)
         {
             _api = api;
-            if (_client != null) return;
-
-            var configurationBuilder = new ConfigurationBuilder()
-                .AddJsonFile($"appsettings.{ENVIRONMENT}.json", optional: true)
-                .AddEnvironmentVariables(ENVIRONMENT);
-                
-            var factory = new WebApplicationFactory<IAssemblyMaker>()
-                .WithWebHostBuilder(builder => {
-                    builder.UseEnvironment(ENVIRONMENT);
-                    builder.UseConfiguration(configurationBuilder.Build());
-
-                    builder.ConfigureServices(services =>
-                    {
-                        //services.AddSingleton<IAccountService, AccountServiceMock>();
-                    });
-                });
-
-            _client = factory.CreateClient();
+            _client = HttpClientService.GetClient();
         }
 
         protected async Task<HttpResponseMessage> Get(string path)

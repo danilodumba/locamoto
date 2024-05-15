@@ -21,13 +21,13 @@ public class AcceptOrderEndpoint : IEndpoint
 
             var response = await mediator.Send(command, cancellationToken);
 
-            if (response.IsValid()) return Results.NoContent();
+            if (response.IsValid()) return Results.Ok(response);
 
             return Results.BadRequest(response.GetErrors());
         })
         .WithName("AcceptOrder")
         .WithTags("Orders")
-        .Produces(204)
+        .Produces(200)
         .Produces(400, typeof(List<string>))
         .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();

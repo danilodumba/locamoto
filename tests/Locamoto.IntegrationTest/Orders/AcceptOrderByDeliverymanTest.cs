@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Json;
-using System.Threading.Tasks;
 using Locamoto.IntegrationTest.Core;
 using Locamoto.IntegrationTest.Rentals;
 using Locamoto.UseCases.Orders.Create;
@@ -25,7 +21,7 @@ namespace Locamoto.IntegrationTest.Orders
             var responseOrder = await this.Post(string.Empty, new CreateOrderRequest(cost));
             var order = await responseOrder.Content.ReadFromJsonAsync<CreateOrderResponse>();
 
-            Thread.Sleep(5000); //Pausa para dar tempo da mensageria.
+            Thread.Sleep(3000); //Pausa para dar tempo da mensageria.
 
             var response = await this.Put($"{order?.OrderID}/deliveryman/{rent.Deliveryman.DeliverymanID}/accept");
 

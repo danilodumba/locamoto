@@ -48,6 +48,12 @@ public class AcceptOrderCommandHandler(IOrdeDeliverymanNotificationRepository or
             await _orderRepository.Update(order);
             await _orderRepository.SaveChanges();
 
+            response.Cost = order.Cost;
+            response.CreatedAt = order.CreatedAt;
+            response.Deliveryman = order.Deliveryman?.Name ?? string.Empty;
+            response.DeliverymanID = order.Deliveryman?.Id ?? Guid.Empty;
+            response.OrderID = order.Id;
+
         }
         catch (DomainException ex)
         {
