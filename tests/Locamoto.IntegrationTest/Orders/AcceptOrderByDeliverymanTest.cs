@@ -31,5 +31,27 @@ namespace Locamoto.IntegrationTest.Orders
 
              Assert.True(response.IsSuccessStatusCode, $"Response invalid. StatusCode: {response.StatusCode} ");
         }
+
+        [Fact]
+        public async Task Must_Accept_Order_Invalid()
+        {
+            var rent = await rentalHttpService.Create();
+
+            var response = await this.Put($"{Guid.NewGuid()}/deliveryman/{rent.Deliveryman.DeliverymanID}/accept");
+
+             Assert.True(response.StatusCode == System.Net.HttpStatusCode.BadRequest, $"Response invalid. StatusCode: {response.StatusCode} ");
+        }
+
+        [Fact]
+        public async Task Must_Accept_Deliveryman_Invalid()
+        {
+            var cost = OrderMock.GetCost();
+            var responseOrder = await this.Post(string.Empty, new CreateOrderRequest(cost));
+            var order = await responseOrder.Content.ReadFromJsonAsync<CreateOrderResponse>();
+
+            var response = await this.Put($"{order?.OrderID}/deliveryman/{Guid.NewGuid()}/accept");
+
+             Assert.True(response.StatusCode == System.Net.HttpStatusCode.BadRequest, $"Response invalid. StatusCode: {response.StatusCode} ");
+        }
     }
 }
