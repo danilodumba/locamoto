@@ -1,5 +1,5 @@
 ## O que é o Locamoto?
-Locamoto é um projeto para locação de motocicletas com pedidos de delivery para os entregradores com motos alugadas.
+Locamoto é um projeto de aprendizagem com requisitos para locação de motocicletas com pedidos de delivery para os entregradores com motos alugadas.
 
 ## Objetivo
 Esse projeto tem por objetivo passar conhecimentos e técnicas de desenvolvimento para desenvolvedores C# .NET
