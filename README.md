@@ -33,7 +33,7 @@ Na teoria, deveria existir os serviços separados para a API locamoto e API de n
 
 >**Note:** Será preciso o Docker e o .NET 8 instalado na sua máquina.
 
-Abra o terminal e rode os comandos abaixo.
+Abra o terminal e se tiver o Bash rode `sh locamoto.sh` caso contrário siga os passos abaixo.
 
 - Na raiz do projeto execute o comando `docker-compose up` para subir a infraestrutura;
 - Na pasta `Locamoto.Infra.PostgreSql` excute o comando `dotnet ef database update` para gerar o banco de dados;
