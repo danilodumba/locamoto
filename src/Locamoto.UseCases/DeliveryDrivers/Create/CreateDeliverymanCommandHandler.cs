@@ -2,12 +2,14 @@ using Locamoto.Domain.Entities;
 using Locamoto.Domain.Exceptions;
 using Locamoto.Domain.Repositories;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Locamoto.UseCases.DeliveryDrivers.Create;
-public class CreateDeliverymanCommandHandler(IDeliverymanRepository deliverymanRepository) 
+public class CreateDeliverymanCommandHandler(IDeliverymanRepository deliverymanRepository, ILogger<CreateDeliverymanCommand> logger)
     : IRequestHandler<CreateDeliverymanCommand, CreateDeliverymanCommandResponse>
 {
     readonly IDeliverymanRepository _deliverymanRepository = deliverymanRepository;
+    readonly ILogger<CreateDeliverymanCommand> _logger = logger;
 
     public async Task<CreateDeliverymanCommandResponse> Handle(CreateDeliverymanCommand request, CancellationToken cancellationToken)
     {
@@ -50,8 +52,9 @@ public class CreateDeliverymanCommandHandler(IDeliverymanRepository deliverymanR
             response.AddError(ex.Message);
             return response;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error to create deliveryman");
             throw;
         }
 

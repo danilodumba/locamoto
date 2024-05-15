@@ -2,12 +2,14 @@ using Locamoto.Domain.Entities;
 using Locamoto.Domain.Exceptions;
 using Locamoto.Domain.Repositories;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Locamoto.UseCases.Motorcycles.Create;
-public class CreateMotorcycleCommandHandler(IMotorcycleRepository motorcycleRepository) 
+public class CreateMotorcycleCommandHandler(IMotorcycleRepository motorcycleRepository, ILogger<CreateMotorcycleCommandHandler> logger)
     : IRequestHandler<CreateMotorcycleCommand, CreateMotorcycleCommandResponse>
 {
     readonly IMotorcycleRepository _motorcycleRepository = motorcycleRepository;
+    readonly ILogger<CreateMotorcycleCommandHandler> _logger = logger;
 
     public async Task<CreateMotorcycleCommandResponse> Handle(CreateMotorcycleCommand request, CancellationToken cancellationToken)
     {
@@ -43,8 +45,9 @@ public class CreateMotorcycleCommandHandler(IMotorcycleRepository motorcycleRepo
             response.AddError(ex.Message);
             return response;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error to create Motorcycle");
             throw;
         }
 

@@ -36,13 +36,13 @@ public class CreateDeliverymanEndpoint : IEndpoint
 
             var response = await mediator.Send(command, cancellationToken);
 
-            if (response.IsValid()) return Results.Ok(response.DeliverymanID);
+            if (response.IsValid()) return Results.Created(string.Empty, response.DeliverymanID);
 
             return Results.BadRequest(response.GetErrors());
         })
         .WithName("CreateDeliveryman")
         .WithTags("Deliveryman")
-        .Produces(200, typeof(Guid))
+        .Produces(201, typeof(Guid))
         .Produces(400, typeof(List<string>))
         .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();

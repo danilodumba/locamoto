@@ -1,13 +1,16 @@
 using Locamoto.Domain.Exceptions;
 using Locamoto.Domain.Repositories;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Locamoto.UseCases.Rentals.Finalize;
 
 public class FinalizeRentalCommandHandler(
-    IRentRepository rentRepository) : IRequestHandler<FinalizeRentalCommand, FinalizeRentalCommandResponse>
+    IRentRepository rentRepository, 
+    ILogger<FinalizeRentalCommandHandler> logger) : IRequestHandler<FinalizeRentalCommand, FinalizeRentalCommandResponse>
 {
     readonly IRentRepository _rentRepository = rentRepository;
+    readonly ILogger<FinalizeRentalCommandHandler> _logger = logger;
 
     public async Task<FinalizeRentalCommandResponse> Handle(FinalizeRentalCommand request, CancellationToken cancellationToken)
     {
@@ -40,11 +43,12 @@ public class FinalizeRentalCommandHandler(
             response.AddError(ex.Message);
             return response;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error to finalize Rental");
             throw;
         }
-       
+
         return response;
     }
 }

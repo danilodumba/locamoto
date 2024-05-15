@@ -35,40 +35,52 @@ public abstract class HttpServiceBase: IDisposable
             _client = factory.CreateClient();
         }
 
-        protected async Task<HttpResponseMessage> Get(string caminho)
+        protected async Task<HttpResponseMessage> Get(string path)
         {
-            var api = _api +"/"+ caminho;
+            var api = _api +"/"+ path;
             return await _client.GetAsync(api);
         }
 
-        protected async Task<HttpResponseMessage> Post(string caminho, object objetoJson)
+        protected async Task<HttpResponseMessage> Post(string path, object objectJson)
         {
-            var api = _api + "/" + caminho;
-            var json =  JsonConvert.SerializeObject(objetoJson);
+            var api = _api + "/" + path;
+            var json =  JsonConvert.SerializeObject(objectJson);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             return await _client.PostAsync(api, content);
         }
 
-        protected async Task<HttpResponseMessage> Post(string api, string caminho, object objetoJson)
+        protected async Task<HttpResponseMessage> Remove(string path)
         {
-            api = api + "/" + caminho;
-            var json = JsonConvert.SerializeObject(objetoJson);
+            var api = _api + "/" + path;
+            return await _client.DeleteAsync(api);
+        }
+
+        protected async Task<HttpResponseMessage> Post(string api, string path, object objectJson)
+        {
+            api = api + "/" + path;
+            var json = JsonConvert.SerializeObject(objectJson);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             return await _client.PostAsync(api, content);
         }
 
-        protected async Task<HttpResponseMessage> Put(string caminho, object objetoJson)
+        protected async Task<HttpResponseMessage> Put(string path, object objectJson)
         {
-            var api = _api + "/" + caminho;
-            var json = JsonConvert.SerializeObject(objetoJson);
+            var api = _api + "/" + path;
+            var json = JsonConvert.SerializeObject(objectJson);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             return await _client.PutAsync(api, content);
+        }
+
+        protected async Task<HttpResponseMessage> Put(string path)
+        {
+            var api = _api + "/" + path;
+            return await _client.PutAsync(api, null);
         }
 
         protected async Task<T> Deserialize<T>(HttpResponseMessage response)
         {
             var stringContent = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<T>(stringContent);
+            return JsonConvert.DeserializeObject<T>(stringContent)!;
         }
 
         public void Dispose()

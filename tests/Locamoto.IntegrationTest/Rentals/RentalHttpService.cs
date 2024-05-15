@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Locamoto.IntegrationTest.Core;
 using Locamoto.IntegrationTest.Deliverymans;
 using Locamoto.IntegrationTest.Motorcycle;
 using Locamoto.IntegrationTest.Plans;
+using Locamoto.UseCases.Rentals.Create;
 using Locamoto.WebApi.Enpoints.Rentals.Requests;
+using MassTransit;
 
 namespace Locamoto.IntegrationTest.Rentals
 {
@@ -16,7 +19,7 @@ namespace Locamoto.IntegrationTest.Rentals
         readonly DeliverymanHttpService deliverymanHttpService = new DeliverymanHttpService();
         readonly PlanHttpService planHttpService = new PlanHttpService();
 
-        public RentalHttpService() : base("rental")
+        public RentalHttpService() : base(ParamCoreTest.API_RENT)
         {
         }
 
@@ -29,10 +32,12 @@ namespace Locamoto.IntegrationTest.Rentals
              return new CreateRentRequest(deliverymanID, plans.FirstOrDefault()?.Id ?? Guid.Empty);
         }
 
-        public async Task Create()
+        public async Task<CreateRentCommandResponse> Create()
         {
             var request = await this.GetRentRequest();
-            await this.Post(string.Empty, request);
+            var response = await this.Post(string.Empty, request);
+
+            return await response.Content.ReadFromJsonAsync<CreateRentCommandResponse>() ?? new CreateRentCommandResponse();
         }
     }
 }

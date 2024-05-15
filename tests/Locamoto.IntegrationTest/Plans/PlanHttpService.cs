@@ -6,7 +6,7 @@ namespace Locamoto.IntegrationTest.Plans
 {
     public class PlanHttpService : HttpServiceBase
     {
-        public PlanHttpService() : base("plans")
+        public PlanHttpService() : base(ParamCoreTest.API_PLAN)
         {
         }
 

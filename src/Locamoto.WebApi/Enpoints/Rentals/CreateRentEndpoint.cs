@@ -21,13 +21,13 @@ public class CreateRentEndpoint : IEndpoint
 
             var response = await mediator.Send(command, cancellationToken);
 
-            if (response.IsValid()) return Results.Ok(response);
+            if (response.IsValid()) return Results.Created(string.Empty, response);
 
             return Results.BadRequest(response.GetErrors());
         })
         .WithName("CreateRent")
         .WithTags("Rentals")
-        .Produces(200, typeof(CreateRentCommandResponse))
+        .Produces(201, typeof(CreateRentCommandResponse))
         .Produces(400, typeof(List<string>))
         .Produces(500, typeof(ProblemDetails))
         .WithOpenApi();

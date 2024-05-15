@@ -1,16 +1,19 @@
 using Locamoto.Domain.Exceptions;
 using Locamoto.Domain.Repositories;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Locamoto.UseCases.Motorcycles.Remove;
 
 public class RemoveMotorcycleCommandHandler(
     IMotorcycleRepository motorcycleRepository,
-    IRentRepository rentRepository) 
+    IRentRepository rentRepository,
+    ILogger<RemoveMotorcycleCommandHandler> logger)
     : IRequestHandler<RemoveMotorcycleCommand, RemoveMotorcycleCommandResponse>
 {
     readonly IMotorcycleRepository _motorcycleRepository = motorcycleRepository;
     readonly IRentRepository _rentRepository = rentRepository;
+    readonly ILogger<RemoveMotorcycleCommandHandler> _logger = logger;
 
     public async Task<RemoveMotorcycleCommandResponse> Handle(RemoveMotorcycleCommand request, CancellationToken cancellationToken)
     {
@@ -46,8 +49,9 @@ public class RemoveMotorcycleCommandHandler(
             response.AddError(ex.Message);
             return response;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error to remove Motorcycle");
             throw;
         }
 

@@ -6,12 +6,12 @@ namespace Locamoto.IntegrationTest.Orders
     public class CreateOrderTest : HttpServiceBase
     {
         readonly OrderHttpService orderHttpService = new OrderHttpService();
-        public CreateOrderTest() : base("order")
+        public CreateOrderTest() : base(ParamCoreTest.API_ORDER)
         {
         }
 
         [Fact]
-        public async Task Must_Create_Order_StatusOk()
+        public async Task Must_Create_Order()
         {
             await this.orderHttpService.CreateBackgroundForOrders();
             var cost = OrderMock.GetCost();

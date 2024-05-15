@@ -19,13 +19,13 @@ namespace Locamoto.WebApi.Enpoints.Motorcycle
             {
                 var response = await mediator.Send(command, cancellationToken);
 
-                if (response.IsValid()) return Results.Ok(response.MotorcicleID);
+                if (response.IsValid()) return Results.Created(string.Empty, response.MotorcicleID);
 
                 return Results.BadRequest(response.GetErrors());
             })
             .WithName("CreteMotorcycle")
             .WithTags("Motorcycle")
-            .Produces(200, typeof(Guid))
+            .Produces(201, typeof(Guid))
             .Produces(400, typeof(List<string>))
             .Produces(500, typeof(ProblemDetails))
             .WithOpenApi();

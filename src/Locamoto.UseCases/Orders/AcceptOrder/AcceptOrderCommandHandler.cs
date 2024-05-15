@@ -1,14 +1,16 @@
 using Locamoto.Domain.Exceptions;
 using Locamoto.Domain.Repositories;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Locamoto.UseCases.Orders.AcceptOrder;
 
-public class AcceptOrderCommandHandler(IOrdeDeliverymanNotificationRepository orderNotificationRepository, IDeliverymanRepository deliverymanRepository, IOrderRepository orderRepository) : IRequestHandler<AcceptOrderCommand, AcceptOrderResponse>
+public class AcceptOrderCommandHandler(IOrdeDeliverymanNotificationRepository orderNotificationRepository, IDeliverymanRepository deliverymanRepository, IOrderRepository orderRepository, ILogger<AcceptOrderCommandHandler> logger) : IRequestHandler<AcceptOrderCommand, AcceptOrderResponse>
 {
     readonly IOrdeDeliverymanNotificationRepository _orderNotificationRepository = orderNotificationRepository;
     readonly IDeliverymanRepository _deliverymanRepository = deliverymanRepository;
     readonly IOrderRepository _orderRepository = orderRepository;
+    readonly ILogger<AcceptOrderCommandHandler> _logger = logger;
 
     public async Task<AcceptOrderResponse> Handle(AcceptOrderCommand request, CancellationToken cancellationToken)
     {
@@ -52,8 +54,9 @@ public class AcceptOrderCommandHandler(IOrdeDeliverymanNotificationRepository or
             response.AddError(ex.Message);
             return response;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error to accept Order");
             throw;
         }
 

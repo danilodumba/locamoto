@@ -3,13 +3,15 @@ using Locamoto.Domain.Exceptions;
 using Locamoto.Domain.Repositories;
 using Locamoto.UseCases.Orders.Create.Notifications;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Locamoto.UseCases.Orders.Create;
 
-public class CreateOrderCommandHandler(IOrderRepository orderRepository, ICreateOrderNotification createOrderNotification) : IRequestHandler<CreateOrderCommand, CreateOrderResponse>
+public class CreateOrderCommandHandler(IOrderRepository orderRepository, ICreateOrderNotification createOrderNotification, ILogger<CreateOrderCommandHandler> logger) : IRequestHandler<CreateOrderCommand, CreateOrderResponse>
 {
     readonly IOrderRepository _orderRepository = orderRepository;
     readonly ICreateOrderNotification _createOrderNotification = createOrderNotification;
+    readonly ILogger<CreateOrderCommandHandler> _logger = logger;
 
     public async Task<CreateOrderResponse> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
     {
@@ -33,14 +35,17 @@ public class CreateOrderCommandHandler(IOrderRepository orderRepository, ICreate
                 Cost = order.Cost,
                 CreatedDate = order.CreatedAt
             });
+
+            response.OrderID = order.Id;
         }
         catch (DomainException ex)
         {
             response.AddError(ex.Message);
             return response;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error to create Order");
             throw;
         }
 

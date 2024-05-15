@@ -2,6 +2,7 @@ using Locamoto.Domain.Entities;
 using Locamoto.Domain.Exceptions;
 using Locamoto.Domain.Repositories;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Locamoto.UseCases.Rentals.Create;
 
@@ -9,12 +10,14 @@ public class CreateRentCommandHandler(
     IRentRepository rentRepository,
     ICostPlanRepository costPlanRepository,
     IMotorcycleRepository motorcycleRepository,
-    IDeliverymanRepository deliverymanRepository) : IRequestHandler<CreateRentCommand, CreateRentCommandResponse>
+    IDeliverymanRepository deliverymanRepository,
+    ILogger<CreateRentCommandHandler> logger) : IRequestHandler<CreateRentCommand, CreateRentCommandResponse>
 {
     readonly IRentRepository _rentRepository = rentRepository;
     readonly ICostPlanRepository _costPlanRepository = costPlanRepository;
     readonly IMotorcycleRepository _motorcycleRepository = motorcycleRepository;
     readonly IDeliverymanRepository _deliverymanRepository = deliverymanRepository;
+    readonly ILogger<CreateRentCommandHandler> _logger = logger;
 
     public async Task<CreateRentCommandResponse> Handle(CreateRentCommand request, CancellationToken cancellationToken)
     {
@@ -57,11 +60,15 @@ public class CreateRentCommandHandler(
             await _rentRepository.Create(rent);
             await _rentRepository.SaveChanges();
 
-            response.MotorcyclePlate = motorcycle.Plate;
+            response.Motorcycle.Plate = motorcycle.Plate;
+            response.Motorcycle.MotorcycleID = motorcycle.Id;
+            response.Motorcycle.Model = motorcycle.Model;
             response.RentID = rent.Id;
             response.ExpectedCost = rent.ExpectedCost;
             response.ExpectedEndDate = rent.ExpectedEndDate;
             response.StartDate = rent.StartDate;
+            response.Deliveryman.DeliverymanID = rent.Deliveryman.Id;
+            response.Deliveryman.Name = rent.Deliveryman.Name;
 
         }
         catch (DomainException ex)
@@ -69,11 +76,12 @@ public class CreateRentCommandHandler(
             response.AddError(ex.Message);
             return response;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error to create Rental");
             throw;
         }
-       
+
         return response;
     }
 

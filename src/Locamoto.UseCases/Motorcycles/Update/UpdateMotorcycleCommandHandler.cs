@@ -1,13 +1,15 @@
 using Locamoto.Domain.Exceptions;
 using Locamoto.Domain.Repositories;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Locamoto.UseCases.Motorcycles.Update;
 
-public class UpdateMotorcycleCommandHandler(IMotorcycleRepository motorcycleRepository) 
+public class UpdateMotorcycleCommandHandler(IMotorcycleRepository motorcycleRepository, ILogger<UpdateMotorcycleCommandHandler> logger)
     : IRequestHandler<UpdateMotorcycleCommand, UpdateMotorcycleCommandResponse>
 {
     readonly IMotorcycleRepository _motorcycleRepository = motorcycleRepository;
+    readonly ILogger<UpdateMotorcycleCommandHandler> _logger = logger;
 
     public async Task<UpdateMotorcycleCommandResponse> Handle(UpdateMotorcycleCommand request, CancellationToken cancellationToken)
     {
@@ -45,8 +47,9 @@ public class UpdateMotorcycleCommandHandler(IMotorcycleRepository motorcycleRepo
             response.AddError(ex.Message);
             return response;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Error to update Motorcycle");
             throw;
         }
 

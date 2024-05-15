@@ -5,7 +5,7 @@ namespace Locamoto.IntegrationTest.Deliverymans
 {
     public class CreateDeliverymanTest : HttpServiceBase
     {
-        public CreateDeliverymanTest() : base("deliveryman")
+        public CreateDeliverymanTest() : base(ParamCoreTest.API_DELIVERYMAN)
         {
         }
 
